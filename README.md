@@ -56,41 +56,93 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
+Step 1:
+Open Quartus II and select new project and choose the file location.
+Step 2:
+Module Declaration. Module should have the file name.
+Step 3:
+Input-Output Delecaration.
+Step 4:
+Use assign to define the functionality of logic circuits.
+Step 5:
+At the end give endmodule.
+Step 6:
+Run the program and choose RTL viewer to get RTL realization.
 
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by:NIKKESH.V
+RegisterNumber:212222050042
 */
+~~~
+FOR ENCODER
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
+FOR DECODER
 
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a & ~b & ~c);
+assign d1=(~a & ~b & c);
+assign d2=(~a & b & ~c);
+assign d3=(~a & b & c);
+assign d4=(a & ~b & ~c);
+assign d5=(a & ~b & c);
+assign d6=(a & b & ~c);
+assign d7=(a & b & c);
+endmodule
+~~~
 
 
 
 
 ### RTL LOGIC  
 
+FOR ENCODER
+
+![encoderrtl](https://github.com/Nikkesh-VJ/Experiment-08-Encoders-and-decoders-/assets/130572280/0ffb3826-1d89-4bf9-b673-1bfd0fa596ac)
 
 
+FOR DECODER
 
-
+![decoderrtl](https://github.com/Nikkesh-VJ/Experiment-08-Encoders-and-decoders-/assets/130572280/4be0dff1-2498-4de1-9944-c96de0287ea6)
 
 
 
 ### TIMING DIGRAMS  
 
+FOR ENCODER
 
+![enodertd](https://github.com/Nikkesh-VJ/Experiment-08-Encoders-and-decoders-/assets/130572280/2539548b-08d9-4593-8efb-a7bc34b995fe)
+
+
+FOR DECODER
+![decoder td](https://github.com/Nikkesh-VJ/Experiment-08-Encoders-and-decoders-/assets/130572280/9aa7d17e-9a5b-413d-9a20-6f8646dd71ed)
 
 
 
 ### TRUTH TABLE 
 
+FOR ENCODER
+
+![encoder tt](https://github.com/Nikkesh-VJ/Experiment-08-Encoders-and-decoders-/assets/130572280/c2c26e01-a3f9-44be-a002-662c835671c8)
 
 
+FOR DECODER
+
+![decoder tt](https://github.com/Nikkesh-VJ/Experiment-08-Encoders-and-decoders-/assets/130572280/cdb8bada-ae6e-40dd-ab8a-a3524e7a440d)
 
 
 
 ### RESULTS 
+8 to 3 Encoder and 3 to 8 decoder has been implemented by using verilog and its outputs are validated
